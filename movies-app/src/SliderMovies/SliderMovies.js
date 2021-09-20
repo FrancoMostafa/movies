@@ -22,14 +22,21 @@ export default function SliderMovies(props) {
   if (movies.loading || !movies.results) {
     return <Loading />;
   }
-
-  console.log(movies);
   const results = movies.results;
   return (
     <Carousel autoplay>
-      {results.map((movie) => (
-        <Movie key={movie.id} movie={movie} />
-      ))}
+      <div>
+        <h3 style={contentStyle}>1</h3>
+      </div>
+      <div>
+        <h3 style={contentStyle}>2</h3>
+      </div>
+      <div>
+        <h3 style={contentStyle}>3</h3>
+      </div>
+      <div>
+        <h3 style={contentStyle}>4</h3>
+      </div>
     </Carousel>
   );
 }
