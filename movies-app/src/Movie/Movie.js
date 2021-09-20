@@ -1,14 +1,7 @@
 import React from "react";
 
 const Movie = (id, movie) => {
-  const imagen = movie.backdrop_path;
-  const description = movie.overview;
-  return (
-    <div>
-      <img src={imagen} />
-      <p>{description}</p>
-    </div>
-  );
+  return <div></div>;
 };
 
 export default Movie;

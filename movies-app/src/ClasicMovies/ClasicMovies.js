@@ -1,14 +1,19 @@
-import React, { useState, useEffect } from "react";
+import { Carousel } from "antd";
+import React from "react";
+import "antd/dist/antd.css";
 import ReactDOM from "react-dom";
-
+import Home from "../Home/Home";
 import { Button } from "react-bulma-components";
 
-import SliderMovies from "../SliderMovies/SliderMovies";
-import ClasicMovies from "../ClasicMovies/ClasicMovies";
+const contentStyle = {
+  height: "160px",
+  color: "#fff",
+  lineHeight: "160px",
+  textAlign: "center",
+  background: "#364d79",
+};
 
-export default function Home() {
-  const [movieList, setMovieList] = useState([]);
-
+export default function ClasicMovies() {
   const cargarHome = () => {
     ReactDOM.render(
       <React.StrictMode>
@@ -26,19 +31,6 @@ export default function Home() {
       document.getElementById("root")
     );
   };
-
-  useEffect(() => {
-    obtenerDatos();
-  }, []);
-
-  const obtenerDatos = async () => {
-    const response = await fetch(
-      "https://api.themoviedb.org/3/movie/now_playing?api_key=273c9de3a548b17ca4aeca62ccaf85c6&language=en-US&page="
-    );
-    const movies = await response.json();
-    setMovieList(movies);
-  };
-
   return (
     <>
       <Button type="button" onClick={cargarHome}>
@@ -48,8 +40,20 @@ export default function Home() {
       <Button type="button" onClick={cargarClasicMovies}>
         ClasicMovies
       </Button>
-
-      <SliderMovies movies={movieList} />
+      <Carousel autoplay>
+        <div>
+          <h3 style={contentStyle}>5</h3>
+        </div>
+        <div>
+          <h3 style={contentStyle}>6</h3>
+        </div>
+        <div>
+          <h3 style={contentStyle}>7</h3>
+        </div>
+        <div>
+          <h3 style={contentStyle}>8</h3>
+        </div>
+      </Carousel>
     </>
   );
 }
