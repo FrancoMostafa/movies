@@ -40,20 +40,7 @@ export default function ClasicMovies() {
       <Button type="button" onClick={cargarClasicMovies}>
         ClasicMovies
       </Button>
-      <Carousel autoplay>
-        <div>
-          <h3 style={contentStyle}>5</h3>
-        </div>
-        <div>
-          <h3 style={contentStyle}>6</h3>
-        </div>
-        <div>
-          <h3 style={contentStyle}>7</h3>
-        </div>
-        <div>
-          <h3 style={contentStyle}>8</h3>
-        </div>
-      </Carousel>
+      <p>Proximamente...</p>
     </>
   );
 }
