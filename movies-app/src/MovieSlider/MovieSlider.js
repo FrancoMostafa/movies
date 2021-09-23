@@ -18,7 +18,6 @@ function MovieSlider(props) {
           <p>{overview}</p>
         </div>
       </div>
-      ;
     </>
   );
 }

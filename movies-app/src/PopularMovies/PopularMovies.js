@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import SliderMovies from "../SliderMovies/SliderMovies";
-import "./Home.scss";
-
-export default function Home() {
+import "antd/dist/antd.css";
+import MovieList from "../MovieList/MovieList";
+export default function PopularMovies() {
   const [movieList, setMovieList] = useState([]);
 
   useEffect(() => {
@@ -11,7 +10,7 @@ export default function Home() {
 
   const obtenerDatos = async () => {
     const response = await fetch(
-      "https://api.themoviedb.org/3/movie/now_playing?api_key=273c9de3a548b17ca4aeca62ccaf85c6&language=es-MX&page="
+      "https://api.themoviedb.org/3/movie/popular?api_key=273c9de3a548b17ca4aeca62ccaf85c6&language=es-MX&page="
     );
     const movies = await response.json();
     setMovieList(movies);
@@ -19,9 +18,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="home">
-        <SliderMovies movies={movieList} />
-      </div>
+      <MovieList movies={movieList} />
     </>
   );
 }
