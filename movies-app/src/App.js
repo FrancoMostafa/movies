@@ -12,19 +12,22 @@ function App() {
           <Link to="/" className="btn btn-dark">
             Home
           </Link>
-          <Link to="/clasicmovies" className="btn btn-dark">
-            Clasic Movies
+          <Link to="/classicmovies" className="btn btn-dark">
+            Classic Movies
           </Link>
           <Link to="/popularmovies" className="btn btn-dark">
             Popular Movies
           </Link>
         </div>
         <Switch>
-          <Route path="/clasicmovies">
+          <Route path="/classicmovies">
             <ClasicMovies />
           </Route>
           <Route path="/popularmovies">
             <PopularMovies />
+          </Route>
+          <Route path="/home">
+            <Home />
           </Route>
           <Route path="/">
             <Home />
