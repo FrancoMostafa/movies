@@ -1,7 +1,9 @@
 import React from "react";
 import Loading from "../Loading/Loading";
 import "./MovieList.scss";
-import { List, Avatar } from "antd";
+import { List, Avatar, Button } from "antd";
+import { Link } from "react-router-dom";
+import { CaretRightOutlined } from "@ant-design/icons";
 
 export default function MovieList(props) {
   const { movies } = props;
@@ -10,7 +12,6 @@ export default function MovieList(props) {
     return <Loading />;
   }
 
-  console.log(movies);
   const results = movies.results;
   return (
     <div className="movielist">
@@ -25,30 +26,13 @@ export default function MovieList(props) {
                   src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
                 />
               }
-              title={<b>{movie.title}</b>}
-              description={
-                <i>
-                  {
-                    <i>
-                      <b>Description:</b> {movie.overview}
-                    </i>
-                  }
-                  <p></p>
-                  {
-                    <i>
-                      <b>Rating:</b> {movie.vote_average}
-                    </i>
-                  }
-                  <p></p>
-                  {
-                    <i>
-                      <b>Release Date: </b>
-                      {movie.release_date}
-                    </i>
-                  }
-                </i>
-              }
+              title={<Link to={`/moviepage/${movie.id}`}>{movie.title}</Link>}
             />
+            <Link to={`/moviepage/${movie.id}`}>
+              <Button type="primary" shape="circle">
+                <CaretRightOutlined />
+              </Button>
+            </Link>
           </List.Item>
         )}
       />
