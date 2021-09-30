@@ -1,16 +1,18 @@
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import TopMovies from "./components/TopMovies/TopMovies";
 import PopularMovies from "./components/PopularMovies/PopularMovies";
 import Header from "./components/Header/Header";
 import MoviePage from "./components/MoviePage/MoviePage";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
     <Router>
       <div className="container" className="App">
         <Header />
+        <Footer />
         <Switch>
           <Route path="/topmovies">
             <TopMovies />
