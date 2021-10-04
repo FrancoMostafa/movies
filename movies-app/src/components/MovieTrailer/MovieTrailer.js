@@ -28,23 +28,21 @@ export default function MovieTrailer() {
   const keyvideo = movieInfo.key;
 
   return (
-    <>
-      <div className="movie-trailer">
-        <div>
-          <Link to={`/moviepage/${id}`} className="btn btn-dark">
-            Back To The Page
-          </Link>
-        </div>
-        <iframe
-          width="853"
-          height="505"
-          src={`https://www.youtube.com/embed/${keyvideo}?rel=0;&autoplay=1`}
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+    <div className="movie-trailer">
+      <div>
+        <Link to={`/moviepage/${id}`} className="btn btn-dark">
+          Back To The Page
+        </Link>
       </div>
-    </>
+      <iframe
+        width="853"
+        height="505"
+        src={`https://www.youtube.com/embed/${keyvideo}?rel=0;&autoplay=1`}
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
   );
 }
