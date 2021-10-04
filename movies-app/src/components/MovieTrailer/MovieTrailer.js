@@ -1,6 +1,7 @@
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Loading from "../Loading/Loading";
 import "./MovieTrailer.scss";
 
 export default function MovieTrailer() {
@@ -19,6 +20,10 @@ export default function MovieTrailer() {
     const movieInfo = await response.json();
     setMovieInfo(movieInfo.results[0]);
   };
+
+  if (movieInfo.loading || !movieInfo) {
+    return <Loading />;
+  }
 
   const keyvideo = movieInfo.key;
 
