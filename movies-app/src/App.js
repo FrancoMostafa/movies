@@ -5,6 +5,7 @@ import TopMovies from "./components/TopMovies/TopMovies";
 import PopularMovies from "./components/PopularMovies/PopularMovies";
 import Header from "./components/Header/Header";
 import MoviePage from "./components/MoviePage/MoviePage";
+import MovieTrailer from "./components/MovieTrailer/MovieTrailer";
 import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
           </Route>
           <Route path="/popularmovies">
             <PopularMovies />
+          </Route>
+          <Route path="/moviepage/movietrailer/:id">
+            <MovieTrailer />
           </Route>
           <Route path="/moviepage/:id">
             <MoviePage />
