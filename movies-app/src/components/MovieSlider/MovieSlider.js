@@ -13,7 +13,7 @@ function MovieSlider(props) {
         className="image"
         style={{ backgroundImage: `url('${backdropPath}')` }}
       >
-        <div className="movie-info">
+        <div className="movieinfo">
           <h2>{title}</h2>
           <p>{overview}</p>
         </div>
