@@ -21,7 +21,6 @@ export default function MovieTrailer() {
   };
 
   const keyvideo = movieInfo.key;
-  console.log(keyvideo);
 
   return (
     <>
