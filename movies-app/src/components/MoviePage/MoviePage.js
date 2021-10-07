@@ -135,7 +135,7 @@ function ModalTrailer(props) {
         }}
         footer={null}
         visible={isModalVisible}
-        destroyOnClose={isModalVisible}
+        destroyOnClose={true}
         onOk={handleOk}
         onCancel={handleCancel}
       >
