@@ -97,7 +97,7 @@ function MovieTrailerRP(props) {
     setMovieInfo(movieInfo.results[0]);
   };
 
-  if (movieInfo.loading || !movieInfo) {
+  if (!movieInfo) {
     return <Loading />;
   }
 
